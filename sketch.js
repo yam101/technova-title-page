@@ -1,5 +1,5 @@
 let bg;
-let y = 0;
+let edgeX = 1100;
 function setup() {
   font = loadFont('fonts/fibberish.ttf');
   textFont(font);
@@ -13,24 +13,21 @@ function setup() {
 
   playButton.position(400, 250);
   helpButton.position(360, 350);
-  playButton.mousePressed(change());
-  helpButton.mousePressed();
 
+  playButton.mouseClicked(change);
+  helpButton.mouseClicked(change);
 }
 
 function draw() {
   background(bg);
   fill(255);
-  //stroke(148, 3, 252);
-  //strokeWeight(5);
+
   text("title", 350, 200);
 
   fill(0, 0, 0, 100)
-  rect(100, 100, 800, 400);
-
-
+  rect(edgeX, 100, 800, 400);
 }
 
 function change() {
-
+  edgeX = 0;
 }
