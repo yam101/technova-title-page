@@ -40,7 +40,7 @@ function titleScreen() {
   playButton.position(400, 250);
   helpButton.position(360, 350);
 
-  playButton.mouseClicked(partAInstructionsMenu);
+  // playButton.mouseClicked(partAInstructionsMenu);
   helpButton.mouseClicked(partAInstructionsMenu);
 
   // title text colour
