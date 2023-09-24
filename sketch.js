@@ -6,6 +6,7 @@ function setup() {
 
   noStroke();
 
+  font = loadFont('fonts/Abaddon Bold.ttf');
   titleFont = loadFont('fonts/fibberish.ttf');
   titleScreenBackground = loadImage("assets/background.png");
 
@@ -42,7 +43,7 @@ function titleScreen() {
   playButton.position(400, 250);
   helpButton.position(360, 350);
 
-  // playButton.mouseClicked(partAInstructionsMenu);
+  playButton.mouseClicked(loseScreen);
   helpButton.mouseClicked(partAInstructionsMenu);
 
   // title text colour
@@ -77,4 +78,17 @@ function partAInstructionsMenu() {
 
 function loseScreen() {
   background(57, 0, 64);
+
+  gameState = 5;
+
+  playButton.hide();
+  helpButton.hide();
+
+  fill(255);
+  rect(100, 100, 800, 500);
+
+  fill(115, 0, 113)
+  textSize(30);
+
+  text("oh no", 150, 150);
 }
