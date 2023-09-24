@@ -40,8 +40,8 @@ function titleScreen() {
   helpButton.show();
   backToMenuButton.hide();
 
-  playButton.position(400, 250);
-  helpButton.position(360, 350);
+  playButton.position(415, 350);
+  helpButton.position(370, 450);
 
   playButton.mouseClicked(loseScreen);
   helpButton.mouseClicked(partAInstructionsMenu);
@@ -50,7 +50,8 @@ function titleScreen() {
   fill(255);
   textSize(150);
   textFont(titleFont);
-  text("title", 350, 200);
+  text("Breaking", 240, 200);
+  text("the Binary", 170, 300);
 
 }
 
@@ -90,5 +91,5 @@ function loseScreen() {
   fill(115, 0, 113)
   textSize(30);
 
-  text("oh no", 150, 150);
+  text("Letter of Resignation", 150, 150);
 }
