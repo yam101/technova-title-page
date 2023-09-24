@@ -22,7 +22,9 @@ function checkGameState() {
   if (gameState == 0) {
     titleScreen();
   } else if (gameState == 1) {
-    partAIInstructionsMenu(0);
+    partAIInstructionsMenu();
+  } else if (gameState == 5) {
+    loseScreen();
   }
 }
 
@@ -71,4 +73,8 @@ function partAInstructionsMenu() {
   textSize(30);
   text("Press the spacebar to move through the text.", 200, 300);
 
+}
+
+function loseScreen() {
+  background(57, 0, 64);
 }
