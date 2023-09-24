@@ -13,10 +13,11 @@ function setup() {
   titleScreenBackground = loadImage("assets/background.png");
   loseScreenBackground = loadImage("assets/loseBackground.png");
   winScreenBackground = loadImage("assets/winBackground.png");
+  factScreenBackground = loadImage("assets/factScreen.png");
 
   playButton = createButton("Play");
   helpButton = createButton("Instructions");
-  backToMenuButton = createButton("Back to Title Screen");
+  titleScreenButton = createButton("Back to Title Screen");
   continueButton = createButton("Continue...");
 }
 
@@ -28,7 +29,7 @@ function checkGameState() {
   if (gameState == 0) {
     titleScreen();
   } else if (gameState == 1) {
-    partAIInstructionsMenu();
+    partAIInstructionsScreen();
   } else if (gameState == 5) {
     loseScreen();
   } else if (gameState == 6) {
@@ -45,14 +46,14 @@ function titleScreen() {
 
   playButton.show();
   helpButton.show();
-  backToMenuButton.hide();
+  titleScreenButton.hide();
   continueButton.hide();
 
   playButton.position(415, 350);
   helpButton.position(370, 450);
 
   playButton.mouseClicked(winScreen);
-  helpButton.mouseClicked(partAInstructionsMenu);
+  helpButton.mouseClicked(partAInstructionsScreen);
 
   noStroke();
   // title text colour
@@ -66,7 +67,7 @@ function titleScreen() {
 
 }
 
-function partAInstructionsMenu() {
+function partAInstructionsScreen() {
   background(titleScreenBackground);
 
   gameState = 1;
@@ -75,11 +76,11 @@ function partAInstructionsMenu() {
 
   playButton.hide();
   helpButton.hide();
-  backToMenuButton.show();
+  titleScreenButton.show();
 
-  backToMenuButton.position(300, 350);
+  titleScreenButton.position(300, 350);
 
-  backToMenuButton.mouseClicked(titleScreen);
+  titleScreenButton.mouseClicked(titleScreen);
 
   noStroke();
   fill(255);
@@ -100,6 +101,7 @@ function loseScreen() {
   helpButton.hide();
   continueButton.show();
   continueButton.position(600, 520);
+  continueButton.mouseClicked(factScreen);
 
   noStroke();
   fill(255);
@@ -128,6 +130,7 @@ function winScreen() {
   helpButton.hide();
   continueButton.show();
   continueButton.position(600, 500);
+  continueButton.mouseClicked(factScreen);
 
   noStroke();
   fill(0);
@@ -158,5 +161,24 @@ function winScreen() {
   fill(255);
   rect(620, 250, 200, 200);
   image(girlCropped, 640, 260);
+
+}
+
+function factScreen() {
+  background(factScreenBackground);
+
+  gameState = 7;
+
+  continueButton.hide();
+  titleScreenButton.show();
+  titleScreenButton.position(550, 475);
+
+  noStroke();
+  fill(255);
+  textFont(titleFont);
+  textSize(40);
+  text("Women in tech face a range of challenges, including \ngender bias, stereotyping, lack of representation, \nand unequal pay.", 75, 175);
+  text("50% of women said they had experienced gender \ndiscrimination at work [in tech], while \nonly 19% of men said the same.", 75, 350);
+  text("Something needs to change.", 75, 525);
 
 }
