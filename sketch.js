@@ -1,6 +1,10 @@
 let gameState = 0;
 let titleScreenBackground;
 
+function preload() {
+  girlImage = loadImage('girl.png');
+}
+
 function setup() {
   createCanvas(1000, 600);
 
@@ -52,6 +56,8 @@ function titleScreen() {
   textFont(titleFont);
   text("Breaking", 240, 200);
   text("the Binary", 170, 300);
+
+  image(girlImage, 100, 380);
 
 }
 
