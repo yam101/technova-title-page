@@ -88,7 +88,7 @@ function partAInstructionsMenu() {
 }
 
 function loseScreen() {
-  background(57, 0, 64);
+  background(loseScreenBackground);
 
   gameState = 5;
 
@@ -97,10 +97,11 @@ function loseScreen() {
   continueButton.show();
   continueButton.position(600, 520);
 
+
   fill(255);
   rect(100, 100, 800, 500);
 
-  fill(115, 0, 113)
+  fill(57, 0, 64)
   textSize(60);
   textFont(titleFont);
 
